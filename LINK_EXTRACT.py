@@ -1,6 +1,3 @@
-# https://en.wikipedia.org/wiki/Programmer
-
-
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin,urlparse
@@ -15,7 +12,6 @@ def extract(Domain):
         return []
     soup=BeautifulSoup(response.content,'html.parser')
     extract_urls=set()
-    # base_domain='/'.join(Domain.split('/')[:3])
     for link in soup.find_all("a"):
         href=link.get("href")
         if href:
@@ -30,8 +26,6 @@ def crawl(Domain):
     max_depth=3
     depth=0
     while to_visit and depth<max_depth:
-
-        # new_url=set()
         current_url=to_visit.pop()
         if current_url not in visited:
             visited.add(current_url)
@@ -45,8 +39,6 @@ def crawl(Domain):
 
 
 Domain=input("Enter your link: ")
-# stors(link)
 urls= crawl(Domain)
-# print(urls)
 for url in urls:
     print(url)
