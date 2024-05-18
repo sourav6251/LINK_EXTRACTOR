@@ -12,5 +12,10 @@ This Python script extracts domain links from a given URL using BeautifulSoup an
 4. Run the script and provide the URL from which you want to extract domain links.
 
 ```bash
+
+chmo
+
+pip install -r requirements.txt
+
 python3 LINK_EXTRACT.py
 
